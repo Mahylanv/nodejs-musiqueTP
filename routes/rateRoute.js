@@ -11,4 +11,7 @@ router
     .get(rateController.getOneRate)
     .patch(rateController.updateARate)
     .delete(rateController.deleteARate);
+router
+    .route("/musics/result/:id_music")
+    .get(rateController.resultRate);
 module.exports = router;
