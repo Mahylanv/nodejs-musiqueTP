@@ -70,9 +70,13 @@ exports.deleteARate = async (req, res) => {
 exports.resultRate = async (req,res) => {
     try{
         const result = await Rate.find({music_id : req.params.id_music});
-        const nb = result.length
+        let nbRate = 0;
+        const divide = result.length;
+        result.forEach((rate) => {
+            nbRate += rate.rate;
+        });
         res.status(200);
-        res.json({message : nb});
+        res.json(nbRate/divide);
     }catch (error) {
         res.status(500);
         res.json({message : "Erreur serveur"});
