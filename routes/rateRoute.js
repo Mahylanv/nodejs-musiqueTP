@@ -8,7 +8,7 @@ router
     
 router
     .route('/:id_rate')
-    // .get(rateController.getOneRate)
+    .get(rateController.getOneRate)
     .patch(rateController.updateARate)
     .delete(rateController.deleteARate);
 module.exports = router;

@@ -8,6 +8,9 @@ let rateSchema = new Schema({
         max: 5,
         required: true
     },
+    music_id: {
+        type: String
+    }
 });
 
 module.exports = mongoose.model('Rate', rateSchema);

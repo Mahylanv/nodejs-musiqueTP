@@ -54,7 +54,7 @@ exports.deleteAMusic = async (req, res) => {
     try {
         await Music.findByIdAndDelete(req.params.id_music);
         res.status(200);
-        res.json({message: 'Article supprimé'});
+        res.json({message: 'Musique supprimée'});
     } catch (error) {
         res.status(500);
         console.log(error);
