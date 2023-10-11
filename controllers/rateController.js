@@ -65,4 +65,17 @@ exports.deleteARate = async (req, res) => {
         console.log(error);
         res.json({ message: "Erreur serveur" })
     }
+};
+
+exports.resultRate = async (req,res) => {
+    try{
+        const result = await Rate.find({music_id : req.params.id_music});
+        const nb = result.length
+        res.status(200);
+        res.json({message : nb});
+    }catch (error) {
+        res.status(500);
+        res.json({message : "Erreur serveur"});
+        console.log(error);
+    }
 }
